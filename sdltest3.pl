@@ -38,20 +38,14 @@ sub process_pkt {
     my $dRed=hex(substr($rg, 0, 2));
     my $dGreen=hex(substr($rg, 2, 2));
     my $dBlue=hex(substr($ba, 0, 2));
-    my $dAlpha=hex(substr($ba, 2, 2));
+#    my $dAlpha=hex(substr($ba, 2, 2));
+    my $dAlpha=255;
 
     print "--------\n";
 
     print("$ip6_obj->{dest_ip} \n");
 
-    print "rg: ", $rg, "\n";
-    print "ba: ", $ba, "\n";
-    print "dX: $dX \n";
-    print "dY: $dY \n";
-    print "dRed: $dRed \n";
-    print "dGreen: $dGreen \n";
-    print "dBlue: $dBlue \n";
-    print "dAlpha: $dAlpha \n";
+    print "rg: ", $rg, "ba: ", $ba, "dX: $dX", "dY: $dY", "dRed: $dRed", "dGreen: $dGreen", "dBlue: $dBlue", "dAlpha: $dAlpha \n";
 
     if (($dX<=$screen_width) && ($dY<=$screen_height) && (hex($pixel_data[4]) >1) && (hex($pixel_data[5])>1)) {
         print "Bedingung trifft zu\n";
